@@ -1,0 +1,26 @@
+:root{
+  --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --good:#10b981; --bad:#ef4444;
+}
+*{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#071128 0%, #08111b 100%);color:#e6eef6}
+.app{max-width:1100px;margin:28px auto;padding:20px}
+header{display:flex;gap:16px;align-items:center;justify-content:space-between}
+h1{margin:0;font-size:18px}
+.controls{display:flex;gap:10px;align-items:center}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 24px rgba(2,6,23,0.6)}
+select,input[type=range]{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px}
+button{background:var(--accent);color:#042;border:0;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600}
+button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+.board{margin-top:18px;height:420px;display:flex;align-items:flex-end;gap:2px;padding:12px;border-radius:10px;overflow:hidden}
+.bar{flex:1 1 auto;border-radius:6px 6px 4px 4px;background:linear-gradient(180deg,var(--accent),#036b78);transition:height 120ms linear, background 120ms}
+.legend{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot.compare{background:#f59e0b}
+.dot.swap{background:#ef4444}
+.dot.sorted{background:var(--good)}
+.sidebar{margin-left:18px;min-width:240px}
+.layout{display:flex;gap:18px}
+.muted{color:var(--muted);font-size:13px}
+.footer{margin-top:12px;color:var(--muted);font-size:13px}
+.pseudocode{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;font-family:monospace;font-size:13px;color:var(--muted);max-height:320px;overflow:auto}
+@media (max-width:900px){.layout{flex-direction:column}.sidebar{min-width:unset}}

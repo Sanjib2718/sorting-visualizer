@@ -1,0 +1,74 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sorting Visualizer — Merge, Selection, Quick, Bubble, Insertion</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* add top margin to all card elements */
+    .card { margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>  Sorting Visualizer  </h1>
+      <div class="controls">
+        <div class="card" style="display:flex;gap:10px;align-items:center; ">
+          <label class="muted">Algorithm</label>
+          <select id="algoSelect">
+            <option value="bubble">Bubble Sort</option>
+            <option value="insertion">Insertion Sort</option>
+            <option value="selection">Selection Sort</option>
+            <option value="merge">Merge Sort</option>
+            <option value="quick">Quick Sort</option>
+          </select>
+          <label class="muted">Size</label>
+          <input id="sizeRange" type="range" min="10" max="120" value="40">
+          <label class="muted">Speed</label>
+          <input id="speedRange" type="range" min="1" max="1000" value="250">
+          <button id="newArray">New</button>
+          <button id="startBtn">Start</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <div style="flex:1">
+        <div id="board" class="board card" style="min-height:420px ; width: 800px;"></div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;align-items:center">
+          <div class="legend muted">
+            <div style="display:flex;gap:8px;align-items:center"><div class="dot compare"></div> compare</div>
+            <div style="display:flex;gap:8px;align-items:center"><div class="dot swap"></div> swap/overwrite</div>
+            <div style="display:flex;gap:8px;align-items:center"><div class="dot sorted"></div> sorted</div>
+          </div>
+          
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px ;"><strong>Controls</strong><span class="muted">State: <span id="stateLabel">idle</span></span></div>
+          <div style="display:flex;gap:8px;margin-bottom:8px">
+            <button id="pauseBtn" class="ghost">Pause</button>
+            <button id="resetBtn" class="ghost">Reset</button>
+          </div>
+          <div style="margin-bottom:8px">
+            <div class="muted">Array values</div>
+            <div id="values" class="muted" style="word-break:break-all;max-height:120px;overflow:auto"></div>
+          </div>
+          <div>
+            <div class="muted">Pseudocode</div>
+            <div id="pseudocode" class="pseudocode">Select an algorithm to show its pseudocode.</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+   
+
+  <script src="script.js"></script>
+</body>
+</html>
